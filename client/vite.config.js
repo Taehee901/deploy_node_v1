@@ -30,7 +30,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "../server/public",
+    //outDir: "../server/public",
     //해당경로이동옵션
   },
 });
