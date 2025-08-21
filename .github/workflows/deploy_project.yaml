@@ -17,7 +17,7 @@ jobs:
 
     steps:
     # 임시 서버인 ubuntu-latest 에 현재 git repository 정보 반영
-    # i install 순수다운(package.json제외),ci clean install(버전차이방지)
+    # i install 순수다운(package.json제외),ci clean install
     - name: Checkout repository
       uses: actions/checkout@v3
 
