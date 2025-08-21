@@ -30,7 +30,7 @@ jobs:
     - name: Build Vue app
       working-directory: client
       run: |
-        npm ci
+        npm i
         npm run build
         
     # github actions 에 저장된 private key를 ubuntu에 복사
@@ -39,7 +39,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-
+    #root@네이버ip:/root/deploy_node_v1/server/public
     # 서버에 접속하여 배포 실행          
     - name: SSH into server and deploy
       run: |
@@ -48,7 +48,7 @@ jobs:
             cd ~/deploy_node_v1
             git pull origin main
             cd server
-            npm ci            
+            npm i            
             pm2 restart app || pm2 start app.js --name "app"
             pm2 save
           EOF
